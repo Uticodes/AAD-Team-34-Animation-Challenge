@@ -21,17 +21,27 @@ public class SplashScreen extends AppCompatActivity {
 
         splash = (ImageView)findViewById(R.id.imageView);
         topdown = AnimationUtils.loadAnimation(this,R.anim.topdown);
-        splash.setAnimation(topdown);
 
-        new Handler().postDelayed(new Runnable() {
+        topdown.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void run() {
+            public void onAnimationStart(Animation animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
                 Intent i = new Intent(getBaseContext(),MainActivity.class);
                 startActivity(i);
                 finish();
             }
-        },2000);
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        splash.startAnimation(topdown);
 
     }
 }
