@@ -57,14 +57,12 @@ public class DetailActivity extends AppCompatActivity {
         Next.setOnClickListener(view -> {
             populateViews();
             playAnimations();
-            Animatoo.animateZoom(DetailActivity.this);
         });
 
 
         Prev.setOnClickListener(view -> {
             prevQuote();
             playAnimations();
-           Animatoo.animateSplit(DetailActivity.this);
         });
     }
 
