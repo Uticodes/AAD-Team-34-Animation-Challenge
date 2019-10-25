@@ -34,6 +34,7 @@ public class DetailActivity extends AppCompatActivity {
     private List<Quote> quotes;
     private int quoteIndex = 0;
     private Animation cardAnim;
+    private Animation textAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,21 +47,30 @@ public class DetailActivity extends AppCompatActivity {
         quoteCard = findViewById(R.id.quoteCard);
         quoteAuthor = findViewById(R.id.author);
         cardAnim = AnimationUtils.loadAnimation(this, R.anim.animate_zoom_enter);
+        textAnim = AnimationUtils.loadAnimation(this, R.anim.quote_text_fade_animation);
 
-        quoteCard.startAnimation(cardAnim);
 
+        playAnimations();
         makeApiCall();
+
 
         Next.setOnClickListener(view -> {
             populateViews();
+            playAnimations();
             Animatoo.animateZoom(DetailActivity.this);
         });
 
 
         Prev.setOnClickListener(view -> {
             prevQuote();
+            playAnimations();
            Animatoo.animateSplit(DetailActivity.this);
         });
+    }
+
+    private void playAnimations() {
+        quoteCard.startAnimation(cardAnim);
+        display.startAnimation(textAnim);
     }
 
     private void makeApiCall(){
