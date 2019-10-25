@@ -1,6 +1,6 @@
 package com.example.tekquotez.services;
 
-import com.example.tekquotez.Quote;
+import com.example.tekquotez.model.Quote;
 
 import java.util.List;
 

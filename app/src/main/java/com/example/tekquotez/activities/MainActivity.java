@@ -1,8 +1,10 @@
-package com.example.tekquotez;
+package com.example.tekquotez.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.tekquotez.R;
 
 public class MainActivity extends AppCompatActivity {
 

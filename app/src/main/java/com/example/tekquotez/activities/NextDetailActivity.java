@@ -1,9 +1,11 @@
-package com.example.tekquotez;
+package com.example.tekquotez.activities;
 
 import android.os.Bundle;
 import android.view.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tekquotez.R;
 
 public class NextDetailActivity extends AppCompatActivity {
 
