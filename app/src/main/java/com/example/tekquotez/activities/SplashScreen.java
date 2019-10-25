@@ -1,14 +1,14 @@
-package com.example.tekquotez;
+package com.example.tekquotez.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.example.tekquotez.R;
 
 public class SplashScreen extends AppCompatActivity {
 
