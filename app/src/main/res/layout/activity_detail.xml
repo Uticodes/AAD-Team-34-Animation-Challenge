@@ -16,7 +16,6 @@
         app:cardBackgroundColor="#78B3E0"
         app:cardCornerRadius="4dp"
         app:cardElevation="12dp"
-        android:hint="Quote Details"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

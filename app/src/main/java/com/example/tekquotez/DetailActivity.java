@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +33,8 @@ public class DetailActivity extends AppCompatActivity {
     private ApiService apiService;
     private List<Quote> quotes;
     private int quoteIndex = 0;
+    private Animation cardAnim;
+    private Animation textAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,20 +46,29 @@ public class DetailActivity extends AppCompatActivity {
         display = findViewById(R.id.text);
         quoteCard = findViewById(R.id.quoteCard);
         quoteAuthor = findViewById(R.id.author);
+        cardAnim = AnimationUtils.loadAnimation(this, R.anim.animate_zoom_enter);
+        textAnim = AnimationUtils.loadAnimation(this, R.anim.quote_text_fade_animation);
 
 
+        playAnimations();
         makeApiCall();
+
 
         Next.setOnClickListener(view -> {
             populateViews();
-            Animatoo.animateZoom(DetailActivity.this);
+            playAnimations();
         });
 
 
         Prev.setOnClickListener(view -> {
             prevQuote();
-           Animatoo.animateSplit(DetailActivity.this);
+            playAnimations();
         });
+    }
+
+    private void playAnimations() {
+        quoteCard.startAnimation(cardAnim);
+        display.startAnimation(textAnim);
     }
 
     private void makeApiCall(){
